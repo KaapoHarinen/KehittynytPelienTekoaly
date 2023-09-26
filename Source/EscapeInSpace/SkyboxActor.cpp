@@ -64,7 +64,7 @@ void ASkyboxActor::GenerateSphere(int verticalSlices, int horizontalSlices)
 
 	for (int v = 1; v <= verticalSlices; v++)
 	{
-		for (int h = 0; h < horizontalSlices, h++;)
+		for (int h = 0; h < horizontalSlices; h++)
 		{
 			int v0 = (v - 1)*(horizontalSlices+1)+h;
 			int v1 = v*(horizontalSlices + 1) + h;
@@ -72,6 +72,7 @@ void ASkyboxActor::GenerateSphere(int verticalSlices, int horizontalSlices)
 			int v3 = (v - 1) * (horizontalSlices + 1) + h+1;
 			Triangles.Add(v0); Triangles.Add(v1); Triangles.Add(v2);
 			Triangles.Add(v0); Triangles.Add(v2); Triangles.Add(v3);
+			UE_LOG(LogTemp, Warning, TEXT("Lisätty kolmio!!!!"));
 		}
 	}
 
@@ -140,7 +141,7 @@ void ASkyboxActor::GenerateSphere(int verticalSlices, int horizontalSlices)
 
 void ASkyboxActor::PostActorCreated()
 {
-	GenerateSphere( FMath::Max(VerticalSlices,MIN_VERTICAL_SLICES), 
+	GenerateSphere( FMath::Max(VerticalSlices, MIN_VERTICAL_SLICES), 
 					FMath::Max(HorizontalSlices, MIN_HORIZONTAL_SLICES));
 
 }

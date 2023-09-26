@@ -7,8 +7,8 @@
 #include "ProceduralMeshComponent.h"
 #include "SkyboxActor.generated.h"
 
-const int MIN_VERTICAL_SLICES = 2;
-const int MIN_HORIZONTAL_SLICES = 4;
+const int MIN_VERTICAL_SLICES = 10;
+const int MIN_HORIZONTAL_SLICES = 10;
 
 UCLASS()
 class ESCAPEINSPACE_API ASkyboxActor : public AActor
